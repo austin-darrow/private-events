@@ -1,12 +1,13 @@
 <h1>Events I Am Hosting</h1>
 <div class="">
-    <% unless @events.nil? %>
-        <% @events.each do |event| %>
+    <% unless @hosted_events.nil? %>
+        <% @hosted_events.each do |event| %>
             <div class="event">
-                <div class="title"><%= event.title %></div>
-                <div class="description"><%= event.description %></div>
-                <div class="datetime"><%= event.datetime %></div>
+                <div class="title"><strong>Title: </strong><%= event.title %></div>
+                <div class="description"><strong>Description: </strong><%= event.description %></div>
+                <div class="datetime"><strong>Date: </strong><%= event.date_time %></div>
             </div>
+            <%= link_to "View", event_path(event) %>
         <% end %>
     <% end %>
 </div>
