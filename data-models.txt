@@ -1,0 +1,15 @@
+MODELS
+------
+User
+username:string
+email:string
+password:string
+
+has_many :events
+
+Event
+location:string
+date:date
+time:time
+
+belongs_to :user
